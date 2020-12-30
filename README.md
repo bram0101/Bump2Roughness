@@ -30,7 +30,9 @@ on top of that. Additionally, you can provide multiple bump, normal and displace
 and added together to form one texture.
 
 Addint multiple roughness values together is a little bit more complicated than doing a plus operation, but not that much more complicated.
+
 ```roughness_new = sqrt(roughness_a * roughness_a  +  roughness_b * roughness_b  +  roughness_c * roughness_c  +  ...)```
+
 and you can keep adding as many as you want. Because of this, you could generate a roughness texture for each map individually and then
 combine them in your shader graph, giving you more control.
 
