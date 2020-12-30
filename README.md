@@ -9,7 +9,7 @@ rendering (assuming you already have a roughness texture applied to your materia
 ## Why use Bump2Roughness?
 In order to improve render times and aliasing, render engines make use of mipmapping for bump and normal maps and only tessellate
 meshes to the size of a screen space pixel for displacement. While perfectly fine for diffuse colour and specular maps, it creates
-problems for bump, normal and displacement maps. mipmapping basically lowers the resolution of the texture based on the distance
+problems for bump, normal and displacement maps. Mipmapping basically lowers the resolution of the texture based on the distance
 from the camera, effectively smoothing and reducing details. This smoothing might not sound bad, but it causes the render engine
 to produce wrong results and can make your renders look more fake and lacking detail. ![Implications from smoothing a displacement map](Bump2Roughness_illustration.jpg)
 In order to get back that detail and get a correct image, you would have to turn off mipmapping by providing a large negative mipmap bias
@@ -60,3 +60,4 @@ While I most likely wouldn't be making many changes to this program in the futur
 this that better fit different workflows. For those people, I have a list of things that I would implement if I were to ever rewrite this:
 * Instead of using Java, rewrite it in C++ with OpenImageIO to read in the images. Java is just too limiting in regards to reading images.
 * Make it fully command line and write the GUI as a separate application (could be in Java or even Python). Making it a command line utility would allow pipeline TDs to automate this and incorporate it in their pipelines.
+* Add in the posibility to use anisotropy to increase the accuracy. The anisotropy value could the stored in one of the three channels next to the roughness value.
