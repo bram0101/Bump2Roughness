@@ -11,7 +11,7 @@ In order to improve render times and aliasing, render engines make use of mip ma
 meshes to the size of a screen space pixel for displacement. While perfectly fine for diffuse colour and specular maps, it creates
 problems for bump, normal and displacement maps. Mip mapping basically lowers the resolution of the texture based on the distance
 from the camera, effectively smoothing and reducing details. This smoothing might not sound bad, but it causes the render engine
-to produce wrong results and can make your renders look more fake and lacking detail. ![Implications from smoothing a displacement map](Bump2Roughness_illustration.png)
+to produce wrong results and can make your renders look more fake and lacking detail. ![Implications from smoothing a displacement map](Bump2Roughness_illustration.jpg)
 In order to get back that detail and get a correct image, you would have to turn off mip mapping by providing a large negative mip map bias
 and more heavily tesselating your meshes for displacement maps. This heavily increases render costs. However, this lost detail can be
 approximated by the roughness parameter in materials, allowing you to still use mip mapping and keeping render times low.
