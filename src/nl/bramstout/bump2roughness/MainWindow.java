@@ -858,6 +858,12 @@ public class MainWindow extends Application {
 		root.setPadding(new Insets(10));
 		root.setSpacing(8);
 
+		Label infoLabel = new Label("Created by Bram Stout    https://bramstout.nl    https://github.com/bram0101/Bump2Roughness");
+		root.getChildren().add(infoLabel);
+		infoLabel.setMinHeight(36.0);
+		infoLabel.setAlignment(Pos.TOP_CENTER);
+		infoLabel.setWrapText(true);
+		
 		addGlobalSettings();
 		root.getChildren().add(new Separator());
 		addTextureSettings();
